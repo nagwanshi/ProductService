@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 public interface ProductService {
 
     public GenericProductDto getProductById(Long id);
-    public void getAllProducts(Long id);
+    public List<GenericProductDto> getAllProducts();
     public void updateProductById(Long id);
-    public void createProduct();
-    public void deleteProductById(Long id);
+    public GenericProductDto createProduct(GenericProductDto genericProductDto);
+    public boolean deleteProductById(Long id);
 }
