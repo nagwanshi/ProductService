@@ -14,5 +14,5 @@ public interface ProductService {
     public List<GenericProductDto> getAllProducts();
     public void updateProductById(Long id);
     public GenericProductDto createProduct(GenericProductDto genericProductDto);
-    public boolean deleteProductById(Long id);
+    public GenericProductDto deleteProductById(Long id);
 }
