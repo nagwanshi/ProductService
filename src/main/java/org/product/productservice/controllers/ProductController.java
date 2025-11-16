@@ -1,13 +1,9 @@
 package org.product.productservice.controllers;
 
-import org.product.productservice.DTOS.ExceptionDto;
-import org.product.productservice.DTOS.FakeStoreProductDto;
 import org.product.productservice.DTOS.GenericProductDto;
 import org.product.productservice.exceptions.ProductNotFoundException;
 import org.product.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
