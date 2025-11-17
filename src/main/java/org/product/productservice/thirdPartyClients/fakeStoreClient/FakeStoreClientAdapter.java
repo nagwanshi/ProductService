@@ -4,6 +4,7 @@ import org.product.productservice.DTOS.FakeStoreProductDto;
 import org.product.productservice.DTOS.GenericProductDto;
 import org.product.productservice.exceptions.ProductNotFoundException;
 import org.product.productservice.thirdPartyClients.ThirdPartyClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,21 @@ import java.util.List;
 public class FakeStoreClientAdapter  {
     private RestTemplateBuilder restTemplateBuilder;
 
-    private final String specificProductUrl = "https://fakestoreapi.com/products/{id}";
-    private final String genericProductsUrl = "https://fakestoreapi.com/products";
+//    @Value didn't work
 
-    FakeStoreClientAdapter(RestTemplateBuilder restTemplateBuilder) {
+    private String baseUrl;
+
+    @Value("${fakeStore.api.path.products}")
+    private String pathForProducts;
+//    private final String specificProductUrl = "https://fakestoreapi.com/products/{id}";
+//    private final String genericProductsUrl = "https://fakestoreapi.com/products" private final String specificProductUrl = "https://fakestoreapi.com/products/{id}";
+    private final String genericProductsUrl;
+    private final String specificProductUrl;
+
+    FakeStoreClientAdapter(RestTemplateBuilder restTemplateBuilder, @Value("${fakeStore.api.url}")  String baseUrl, @Value("${fakeStore.api.path.products}") String pathForProducts ) {
         this.restTemplateBuilder = restTemplateBuilder;
+        this.genericProductsUrl = baseUrl + pathForProducts;
+        this.specificProductUrl = baseUrl + pathForProducts+ "/{id}";
     }
 
     private static GenericProductDto convertToGenericProductDto(FakeStoreProductDto fakeStoreProductDto) {
