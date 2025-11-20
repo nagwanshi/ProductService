@@ -17,6 +17,7 @@ public class Category extends BaseModel{
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
+    // One of the major topics that was discussed
     @OneToMany(fetch = jakarta.persistence.FetchType.EAGER, mappedBy = "category")
     private List<Product> products;
 }

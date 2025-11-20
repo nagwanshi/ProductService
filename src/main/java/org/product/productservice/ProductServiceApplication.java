@@ -73,22 +73,24 @@ public class ProductServiceApplication implements CommandLineRunner {
 //
 //            Product savedProduct =  productRepository.save(product);
 
-                Price price = new Price();
-                price.setCurrency("INR");
-                price.setPrice(100000);
-                Price savedPrice = priceRepository.save(price);
+//                Price price = new Price();
+//                price.setCurrency("INR");
+//                price.setPrice(100000);
+//                Price savedPrice = priceRepository.save(price);
+//
+//                Category category = new Category();
+//                category.setName("Apple ");
+//                Category savedCategory =  categoryRepository.save(category);
+//
+//                Product product = new Product();
+//                product.setCategory(savedCategory);
+//                product.setPrice(savedPrice);
+//                product.setName("Apple Watch");
+//                product.setDescription("Best Apple Watch");
+//                productRepository.save(product);
 
-                Category category = new Category();
-                category.setName("Apple ");
-                Category savedCategory =  categoryRepository.save(category);
-
-                Product product = new Product();
-                product.setCategory(savedCategory);
-                product.setPrice(savedPrice);
-                product.setName("Apple Watch");
-                product.setDescription("Best Apple Watch");
-                productRepository.save(product);
-
+               List<Product> products = productRepository.findAllByPrice_PriceGreaterThan(5000);
+        System.out.println(products);
 
 
     }
