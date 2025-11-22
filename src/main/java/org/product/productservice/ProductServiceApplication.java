@@ -89,8 +89,8 @@ public class ProductServiceApplication implements CommandLineRunner {
 //                product.setDescription("Best Apple Watch");
 //                productRepository.save(product);
 
-               List<Product> products = productRepository.findAllByPrice_PriceGreaterThan(5000);
-        System.out.println(products);
+//               List<Product> products = productRepository.findAllByPrice_PriceGreaterThan(5000);
+//        System.out.println(products);
 
 
     }
