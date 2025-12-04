@@ -20,18 +20,19 @@ import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
-public class ProductServiceApplication implements CommandLineRunner {
+public class ProductServiceApplication  {
 
-    ProductRepository productRepository;
-    CategoryRepository categoryRepository;
-    private final PriceRepository priceRepository;
 
-    ProductServiceApplication(ProductRepository productRepository, CategoryRepository categoryRepository,
-                              PriceRepository priceRepository) {
-        this.productRepository = productRepository;
-        this.categoryRepository = categoryRepository;
-        this.priceRepository = priceRepository;
-    }
+//    ProductRepository productRepository;
+//    CategoryRepository categoryRepository;
+//    private final PriceRepository priceRepository;
+//
+//    ProductServiceApplication(ProductRepository productRepository, CategoryRepository categoryRepository,
+//                              PriceRepository priceRepository) {
+//        this.productRepository = productRepository;
+//        this.categoryRepository = categoryRepository;
+//        this.priceRepository = priceRepository;
+//    }
 
 
 
@@ -49,8 +50,8 @@ public class ProductServiceApplication implements CommandLineRunner {
         SpringApplication.run(ProductServiceApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
+//    @Override
+//    public void run(String... args) throws Exception {
 //            Category category = new Category();
 //            category.setName("Apple Products");
 //            Category savedCategory = categoryRepository.save(category);
@@ -93,7 +94,7 @@ public class ProductServiceApplication implements CommandLineRunner {
 //        System.out.println(products);
 
 
-    }
+//    }
 
     //    @Override
 //    public void run(String... args) throws Exception {
